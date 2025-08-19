@@ -15,4 +15,4 @@ def connection():
 conn = connection()
 cursor = conn.cursor()
 
-# uv,ruff,mypy,env,pydantic_settings
+
