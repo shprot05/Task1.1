@@ -14,5 +14,3 @@ def connection():
 
 conn = connection()
 cursor = conn.cursor()
-
-
