@@ -33,7 +33,7 @@ querie = {
     }
 
 
-class Execute:
+class SqlExecuter:
     def __init__(self):
         self.querie = querie
         self.conn = conn

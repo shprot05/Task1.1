@@ -13,7 +13,7 @@ class DataLoader(ABC):
         pass
 
 
-class LoadingRooms(DataLoader):
+class RoomsLoader(DataLoader):
     def load_data(self, path):
         with open(path, 'r', encoding='utf-8') as f:
             rooms_data = json.load(f)
@@ -23,7 +23,7 @@ class LoadingRooms(DataLoader):
         self.conn.commit()
 
 
-class LoadingStudents(DataLoader):
+class StudentsLoader(DataLoader):
     def load_data(self, path):
         with open(path, 'r', encoding='utf-8') as f:
             students_data = json.load(f)
