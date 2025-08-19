@@ -29,8 +29,8 @@ querie = {
         FROM rooms
         INNER JOIN students on rooms.id = students.room
         GROUP BY rooms.id, rooms.name
-        HAVING COUNT(DISTINCT students.sex) > 1"""
-    }
+        HAVING COUNT(DISTINCT students.sex) > 1""",
+}
 
 
 class SqlExecuter:

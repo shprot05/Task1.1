@@ -15,28 +15,31 @@ class DataLoader(ABC):
 
 class RoomsLoader(DataLoader):
     def load_data(self, path):
-        with open(path, 'r', encoding='utf-8') as f:
+        with open(path, "r", encoding="utf-8") as f:
             rooms_data = json.load(f)
 
         for room in rooms_data:
-            self.cursor.execute("INSERT INTO rooms (id, name) VALUES (%s, %s)", (room['id'], room['name']))
+            self.cursor.execute(
+                "INSERT INTO rooms (id, name) VALUES (%s, %s)",
+                (room["id"], room["name"]),
+            )
         self.conn.commit()
 
 
 class StudentsLoader(DataLoader):
     def load_data(self, path):
-        with open(path, 'r', encoding='utf-8') as f:
+        with open(path, "r", encoding="utf-8") as f:
             students_data = json.load(f)
 
         for student in students_data:
             self.cursor.execute(
                 "INSERT INTO students (id, name, birthday, room, sex) VALUES (%s, %s,%s, %s,%s)",
                 (
-                    student['id'],
-                    student['name'],
-                    student['birthday'],
-                    student['room'],
-                    student['sex']
-                )
+                    student["id"],
+                    student["name"],
+                    student["birthday"],
+                    student["room"],
+                    student["sex"],
+                ),
             )
         self.conn.commit()

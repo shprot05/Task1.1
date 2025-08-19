@@ -7,7 +7,7 @@ def connection():
         user="postgres",
         password="12345678",
         port="5432",
-        dbname="postgres"
+        dbname="postgres",
     )
     return conn
 
