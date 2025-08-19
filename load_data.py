@@ -1,0 +1,42 @@
+import json
+from db_connection import conn, cursor
+from abc import ABC, abstractmethod
+
+
+class DataLoader(ABC):
+    def __init__(self):
+        self.conn = conn
+        self.cursor = cursor
+
+    @abstractmethod
+    def load_data(self, path):
+        pass
+
+
+class LoadingRooms(DataLoader):
+    def load_data(self, path):
+        with open(path, 'r', encoding='utf-8') as f:
+            rooms_data = json.load(f)
+
+        for room in rooms_data:
+            self.cursor.execute("INSERT INTO rooms (id, name) VALUES (%s, %s)", (room['id'], room['name']))
+        self.conn.commit()
+
+
+class LoadingStudents(DataLoader):
+    def load_data(self, path):
+        with open(path, 'r', encoding='utf-8') as f:
+            students_data = json.load(f)
+
+        for student in students_data:
+            self.cursor.execute(
+                "INSERT INTO students (id, name, birthday, room, sex) VALUES (%s, %s,%s, %s,%s)",
+                (
+                    student['id'],
+                    student['name'],
+                    student['birthday'],
+                    student['room'],
+                    student['sex']
+                )
+            )
+        self.conn.commit()
