@@ -1,4 +1,4 @@
-from db_connection import conn, cursor
+from db_connection import get_connection
 
 
 queries = {
@@ -36,8 +36,8 @@ queries = {
 class SqlExecuter:
     def __init__(self):
         self.queries = queries
-        self.conn = conn
-        self.cursor = cursor
+        self.conn = get_connection()
+        self.cursor = self.conn.cursor()
 
     def students_count_in_rooms(self):
         self.cursor.execute(self.queries[1])

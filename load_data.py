@@ -1,12 +1,12 @@
 import json
-from db_connection import conn, cursor
+from db_connection import get_connection
 from abc import ABC, abstractmethod
 
 
 class DataLoader(ABC):
     def __init__(self):
-        self.conn = conn
-        self.cursor = cursor
+        self.conn = get_connection()
+        self.cursor = self.conn.cursor()
 
     @abstractmethod
     def load_data(self, path):

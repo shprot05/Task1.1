@@ -11,9 +11,9 @@ def main():
     executor = SqlExecuter()
 
     executor.students_count_in_rooms()
-    # executor.rooms_with_min_age()
-    # executor.rooms_with_max_age_diff()
-    # executor.m_and_f_rooms()
+    #executor.rooms_with_min_age()
+    #executor.rooms_with_max_age_diff()
+    #executor.m_and_f_rooms()
 
 
 if __name__ == "__main__":
