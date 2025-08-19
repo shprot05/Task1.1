@@ -1,7 +1,7 @@
 from db_connection import conn, cursor
 
 
-querie = {
+queries = {
     1: """Select 
             rooms.name, 
             Count(*) 
@@ -35,30 +35,30 @@ querie = {
 
 class SqlExecuter:
     def __init__(self):
-        self.querie = querie
+        self.queries = queries
         self.conn = conn
         self.cursor = cursor
 
-    def first_querie(self):
-        self.cursor.execute(self.querie[1])
+    def students_count_in_rooms(self):
+        self.cursor.execute(self.queries[1])
         result1 = self.cursor.fetchall()
-        for room, age in result1:
-            print(f"{room}  {age}")
+        for room, count in result1:
+            print(f"{room}  {count}")
 
-    def second_querie(self):
-        self.cursor.execute(self.querie[2])
+    def rooms_with_min_age(self):
+        self.cursor.execute(self.queries[2])
         result2 = self.cursor.fetchall()
-        for a, b in result2:
-            print(f"{a}  {b}")
+        for room_id, avg in result2:
+            print(f"{room_id}  {avg}")
 
-    def third_querie(self):
-        self.cursor.execute(self.querie[3])
+    def rooms_with_max_age_diff(self):
+        self.cursor.execute(self.queries[3])
         result3 = self.cursor.fetchall()
-        for a, b in result3:
-            print(f"{a}  {b}")
+        for room, diff in result3:
+            print(f"{room}  {diff}")
 
-    def forth_querie(self):
-        self.cursor.execute(self.querie[4])
+    def m_and_f_rooms(self):
+        self.cursor.execute(self.queries[4])
         result4 = self.cursor.fetchall()
-        for a, b in result4:
-            print(f"{a}  {b} ")
+        for room_id, room in result4:
+            print(f"{room_id}  {room} ")
