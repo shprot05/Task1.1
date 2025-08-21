@@ -8,7 +8,7 @@ queries = {
         From rooms 
         join students on rooms.id = students.room
         group by rooms.name
-        order by count """,
+        order by count""",
     2: """SELECT 
             rooms.name,
             AVG(EXTRACT(YEAR FROM AGE(CURRENT_DATE, students.birthday))) AS avg_age
