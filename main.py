@@ -5,9 +5,13 @@ from queries import SqlExecuter, create_indexes
 def main():
     room_loader = RoomLoader()
     student_loader = StudentLoader()
+
+    print("Вызов метода load_data для загрузки данных в бд")
     room_loader.load_data("data/rooms.json")
     student_loader.load_data("data/students.json")
+    print("Данные загружены в бд")
 
+    print("Выполнение запросов")
     create_indexes()
     executor = SqlExecuter()
 
