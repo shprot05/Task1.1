@@ -8,8 +8,7 @@ def main() -> None:
     room_loader = RoomLoader()
     student_loader = StudentLoader()
 
-    # Создание индексов для ускорения запросов
-    create_indexes()
+
 
     # Ввод путей к JSON-файлам
     path_to_students = input("Введите путь к json файлу студентов: ")
@@ -19,6 +18,9 @@ def main() -> None:
     room_loader.load_data(path_to_rooms)
     student_loader.load_data(path_to_students)
     print("Данные загружены в бд")
+
+    # Создание индексов для ускорения запросов
+    create_indexes()
 
     # Ввод формата экспорта и пути
     export_format = input("В каком формате сохранить результаты? (json / xml): ").strip().lower()
