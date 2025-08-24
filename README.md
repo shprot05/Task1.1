@@ -1,4 +1,4 @@
-# 1. Клонируй репозиторий (если он на GitHub)
+# 1. Клонируй репозиторий
 git clone https://github.com/shprot05/Task1.1.git
 cd student-room-analyzer
 
