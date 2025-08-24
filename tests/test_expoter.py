@@ -5,7 +5,7 @@ import tempfile
 from export_data import Exporter
 import xml.etree.ElementTree as ET
 
-
+class TestExporter(unittest.TestCase):
     def setUp(self):
         # Создаём временную директорию для экспорта
         self.test_dir = tempfile.TemporaryDirectory()
