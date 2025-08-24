@@ -9,12 +9,12 @@ class DataLoader(ABC):
         self.cursor = self.conn.cursor()
 
     @abstractmethod
-    def load_data(self, path):
+    def load_data(self, path: str):
         pass
 
 
 class RoomLoader(DataLoader):
-    def load_data(self, path):
+    def load_data(self, path: str):
         with open(path, "r", encoding="utf-8") as f:
             rooms_data = json.load(f)
 
@@ -27,7 +27,7 @@ class RoomLoader(DataLoader):
 
 
 class StudentLoader(DataLoader):
-    def load_data(self, path):
+    def load_data(self, path:str):
         with open(path, "r", encoding="utf-8") as f:
             students_data = json.load(f)
 
