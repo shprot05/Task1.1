@@ -2,6 +2,7 @@
 
 # 1. Клонируй репозиторий
 git clone https://github.com/shprot05/Task1.1.git
+
 cd Task1.1
 
 # 2. Собери и запусти контейнер
@@ -11,7 +12,8 @@ docker-compose up --build
 # Второй способ запуска
 # 1. Клонируй репозиторий
 git clone https://github.com/shprot05/Task1.1.git
-cd student-room-analyzer
+
+cd Task1.1
 
 # 2. Установи зависимости
 pip install -r requirements.txt
@@ -19,9 +21,13 @@ pip install -r requirements.txt
 # 3. Настрой файл окружения .env
 # Пример содержимого .env:
 DB_HOST=localhost
+
 DB_PORT=5432
+
 DB_USER=your_user
+
 DB_PASSWORD=your_password
+
 DB_NAME=your_database
 
 # 4. Подготовь JSON-файлы с данными
