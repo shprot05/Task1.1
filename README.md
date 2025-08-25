@@ -6,7 +6,8 @@ git clone https://github.com/shprot05/Task1.1.git
 cd Task1.1
 
 # 2. Собери и запусти контейнер
-docker-compose up --build
+docker compose up   
+
 
 
 # Второй способ запуска
