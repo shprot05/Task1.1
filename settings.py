@@ -9,16 +9,16 @@ BASE_DIR = CURRENT_FILE_PATH.parent
 ENV_FILE_PATH = BASE_DIR / ".env"
 
 
-class DBSettings(BaseModel):
+class PostgresSettings(BaseModel):
     host: str
     user: str
     password: SecretStr
     port: int
-    name: str
+    db: str
 
 
 class Settings(BaseSettings, env_nested_delimiter="_"):
-    db: DBSettings
+    postgres: PostgresSettings
 
 
 def load_settings(env_file) -> Settings:
