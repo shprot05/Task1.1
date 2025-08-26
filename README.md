@@ -22,7 +22,7 @@ docker compose run --build --rm -it app
 
 # 4. Следуй инструкциям в консоли:
  - Введи путь к файлу студентов (пример: /host-c/Users/37529/Downloads/students.json)
- - Введи путь к файлу комнат (пример: /host-c/Users/37529/Downloads/students.json)
+ - Введи путь к файлу комнат (пример: /host-c/Users/37529/Downloads/rooms.json)
  - Выбери формат экспорта (json или xml)
  - Укажи путь для сохранения результатов (пример: /host-c/Users/37529/Downloads)
 
