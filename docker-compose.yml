@@ -12,7 +12,7 @@ services:
     environment:
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/mydb
     volumes:
-      - C:/:/host-c
+      - ./:/app
 
   postgres:
     image: postgres:15-alpine
