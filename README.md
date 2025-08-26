@@ -21,10 +21,10 @@ DB_NAME=your_database
 docker compose run --build --rm -it app
 
 # 4. Следуй инструкциям в консоли:
- - Введи путь к файлу студентов (пример: /host-c/Users/37529/Downloads/students.json)
- - Введи путь к файлу комнат (пример: /host-c/Users/37529/Downloads/rooms.json)
+ - Введи путь к файлу студентов (пример: /app/data/students.json)
+ - Введи путь к файлу комнат (пример: /app/data/rooms.json)
  - Выбери формат экспорта (json или xml)
- - Укажи путь для сохранения результатов (пример: /host-c/Users/37529/Downloads)
+ - Укажи путь для сохранения результатов (пример: /app/output)
 
 # 5. Результаты будут сохранены в:
  - ./json_output/ или ./xml_output/
@@ -58,10 +58,10 @@ DB_NAME=your_database
 python main.py
 
 # 6. Следуй инструкциям в консоли:
- - Введи путь к файлу студентов (пример: C:\\Users\\37529\\Downloads\\students.json)
- - Введи путь к файлу комнат (пример: C:\\Users\\37529\\Downloads\\rooms.json)
+ - Введи путь к файлу студентов (пример: /app/data/students.json)
+ - Введи путь к файлу комнат (пример: /app/data/rooms.json)
  - Выбери формат экспорта (json или xml)
- - Укажи путь для сохранения результатов(пример: C:\\Users\\37529\\Downloads)
+ - Укажи путь для сохранения результатов (пример: /app/output)
 
 # 7. Результаты будут сохранены в:
  - ./json_output/ или ./xml_output/
