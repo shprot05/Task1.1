@@ -45,7 +45,6 @@ def main(
 if __name__ == "__main__":
     typer.run(main)
 
-# /host-c/Users/37529/Downloads/students.json
-# /host-c/Users/37529/Downloads/rooms.json
-# c
+
+
 
