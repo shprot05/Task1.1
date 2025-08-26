@@ -4,11 +4,30 @@
 git clone https://github.com/shprot05/Task1.1.git
 
 cd Task1.1
+# 2. Настрой файл окружения .env
+Пример содержимого .env:
 
+DB_HOST=postgres
 
-# 2. Собери и запусти контейнер
-docker compose up   
+DB_PORT=5432
 
+DB_USER=your_user
+
+DB_PASSWORD=your_password
+
+DB_NAME=your_database
+
+# 3. Собери и запусти контейнер 
+docker compose run --build --rm -it app
+
+# 4. Следуй инструкциям в консоли:
+ - Введи путь к файлу студентов (пример: /host-c/Users/37529/Downloads/students.json)
+ - Введи путь к файлу комнат (пример: /host-c/Users/37529/Downloads/students.json)
+ - Выбери формат экспорта (json или xml)
+ - Укажи путь для сохранения результатов (пример: /host-c/Users/37529/Downloads)
+
+# 5. Результаты будут сохранены в:
+ - ./json_output/ или ./xml_output/
 
 
 # Второй способ запуска
@@ -39,10 +58,10 @@ DB_NAME=your_database
 python main.py
 
 # 6. Следуй инструкциям в консоли:
-# - Введи путь к файлу студентов
-# - Введи путь к файлу комнат
-# - Выбери формат экспорта (json или xml)
-# - Укажи путь для сохранения результатов
+ - Введи путь к файлу студентов (пример: C:\\Users\\37529\\Downloads\\students.json)
+ - Введи путь к файлу комнат (пример: C:\\Users\\37529\\Downloads\\rooms.json)
+ - Выбери формат экспорта (json или xml)
+ - Укажи путь для сохранения результатов(пример: C:\\Users\\37529\\Downloads)
 
 # 7. Результаты будут сохранены в:
-# - ./json_output/ или ./xml_output/
+ - ./json_output/ или ./xml_output/
