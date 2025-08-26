@@ -20,7 +20,7 @@ class RoomLoader(DataLoader):
 
         for room in rooms_data:
             self.cursor.execute(
-                "INSERT INTO rooms (id, name) VALUES (%s, %s)",
+                "INSERT INTO rooms (id, name) VALUES (%s, %s)  ON CONFLICT (id) DO NOTHING",
                 (room["id"], room["name"]),
             )
         self.conn.commit()
@@ -33,7 +33,7 @@ class StudentLoader(DataLoader):
 
         for student in students_data:
             self.cursor.execute(
-                "INSERT INTO students (id, name, birthday, room, sex) VALUES (%s, %s,%s, %s,%s)",
+                "INSERT INTO students (id, name, birthday, room, sex) VALUES (%s, %s,%s, %s,%s)  ON CONFLICT (id) DO NOTHING",
                 (
                     student["id"],
                     student["name"],

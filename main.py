@@ -1,6 +1,7 @@
 from load_data import RoomLoader, StudentLoader
 from queries import SqlExecuter, create_indexes
 from export_data import Exporter
+from create_tables import create_tables
 import typer
 
 
@@ -14,10 +15,8 @@ def main(
     room_loader = RoomLoader()
     student_loader = StudentLoader()
 
-    # Создание индексов для ускорения запросов
-    create_indexes()
 
-
+    create_tables()
 
     print("Вызов метода load_data для загрузки данных в бд")
     room_loader.load_data(path_to_rooms)
@@ -27,6 +26,9 @@ def main(
     print("Выполнение запросов")
     exporter = Exporter(export_format, path_to_export)
     executer = SqlExecuter(exporter)
+
+    # Создание индексов для ускорения запросов
+    create_indexes()
 
     # Выполнение всех запросов
     executer.students_count_in_rooms()
@@ -42,3 +44,8 @@ def main(
 # Точка входа
 if __name__ == "__main__":
     typer.run(main)
+
+# /host-c/Users/37529/Downloads/students.json
+# /host-c/Users/37529/Downloads/rooms.json
+# c
+
